@@ -6,6 +6,9 @@ public class Motorcycle extends Vehicle {
 	private float tyreSize;
 	
 	public Motorcycle() {
+		super(-1, "Unknown", "Unknown", 0);
+		setRegistrationID("?");
+		setTyreSize(0f);
 	}
 
 	public Motorcycle(int ID, String owner, String fuelType, int wheels, String reg, float tyreSize) {

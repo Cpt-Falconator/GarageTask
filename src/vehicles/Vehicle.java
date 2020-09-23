@@ -2,6 +2,7 @@ package vehicles;
 
 public class Vehicle {
 
+	private int vehicleID;
 	private String owner;
 	private String fuelType;
 	private int numberOfWheels;
@@ -9,16 +10,26 @@ public class Vehicle {
 	
 	public Vehicle() {
 		super();
+		setVehicleID(-1);
 		setOwner("Unknown");
 		setFuelType("Unknown");
 		setNumberOfWheels(0);
 	}
 	
-	public Vehicle(String owner, String fuelType, int wheels)
+	public Vehicle(int ID, String owner, String fuelType, int wheels)
 	{
+		setVehicleID(ID);
 		setOwner(owner);
 		setFuelType(fuelType);
 		setNumberOfWheels(wheels);
+	}
+	
+	public int getVehicleID() {
+		return vehicleID;
+	}
+
+	public void setVehicleID(int ID) {
+		this.vehicleID = ID;
 	}
 
 	public String getOwner() {

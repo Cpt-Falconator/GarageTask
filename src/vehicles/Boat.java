@@ -43,5 +43,17 @@ public class Boat extends Vehicle {
 	public void setIsGlitter(Boolean isGlitter) {
 		this.isGlitter = isGlitter;
 	}
+	
+	@Override
+	public void fixVehicle() {
+		float totalPrice = 0;
+		
+		if(isGlitter && boatLength > 10){
+			totalPrice+= (boatWidth * 20);
+		}else {
+			totalPrice+= (boatLength * 9);
+		}
+		System.out.println("Bill for " + this.getOwner() + " = £" + totalPrice);
+	}
 
 }

@@ -56,6 +56,10 @@ public class Vehicle {
 		this.numberOfWheels = numberOfWheels;
 	}
 	
+	public void fixVehicle() {
+		System.out.println("Error, vehicle cannot be fixed");
+	}
+	
 	
 
 }

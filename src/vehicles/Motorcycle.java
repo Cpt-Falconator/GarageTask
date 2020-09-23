@@ -32,4 +32,16 @@ public class Motorcycle extends Vehicle {
 	public void setTyreSize(float tyreSize) {
 		this.tyreSize = tyreSize;
 	}
+	
+	@Override
+	public void fixVehicle() {
+		float totalPrice = 0;
+		
+		if(tyreSize < 11){
+			totalPrice+= (70 * this.getNumberOfWheels());
+		}else {
+			totalPrice+= (40 * this.getNumberOfWheels());
+		}
+		System.out.println("Bill for " + this.getOwner() + " = £" + totalPrice);
+	}
 }

@@ -43,5 +43,16 @@ public class Car extends Vehicle {
 	public void setIsManual(Boolean isManual) {
 		this.isManual = isManual;
 	}
+	
+	@Override
+	public void fixVehicle() {
+		float totalPrice = 0;
+		
+		if(isManual) {
+			totalPrice += 80.0f;
+		}
+		totalPrice = totalPrice + (numberOfDoors * 30);
+		System.out.println("Bill for " + this.getOwner() + " = £" + totalPrice);
+	}
 
 }

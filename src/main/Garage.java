@@ -57,7 +57,7 @@ public class Garage {
 		
 		for(int i = 0; i < falconGarage.size(); i++)
 		{
-			if(falconGarage.get(i).getClass().getSimpleName().equals(vehicleType)) {
+			if(falconGarage.get(i).getClass().getSimpleName().equalsIgnoreCase(vehicleType)) {
 				System.out.println("> " + falconGarage.get(i).getOwner());
 				falconGarage.remove(i);
 				i--;

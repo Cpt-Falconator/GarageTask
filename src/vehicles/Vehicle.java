@@ -1,6 +1,6 @@
 package vehicles;
 
-public class Vehicle {
+public abstract class Vehicle {
 
 	private int vehicleID;
 	private String owner;
@@ -56,9 +56,7 @@ public class Vehicle {
 		this.numberOfWheels = numberOfWheels;
 	}
 	
-	public void fixVehicle() {
-		System.out.println("Error, vehicle cannot be fixed");
-	}
+	public abstract void fixVehicle();
 	
 	
 

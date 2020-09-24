@@ -3,9 +3,9 @@ package main;
 public class Main {
 
 	public static void main(String[] args) {
-		Garage garage = new Garage();
+		Garage falconGarage = new Garage();
 		
-		garage.runGarage();
+		falconGarage.runGarage();
 	}
 
 }

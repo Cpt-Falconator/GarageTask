@@ -9,11 +9,10 @@ import vehicles.Vehicle;
 
 public class Garage {
 
-	private ArrayList<Vehicle> falconGarage;
+	private ArrayList<Vehicle> garage;
 	
 	public Garage() {
-		falconGarage = new ArrayList<Vehicle>();
-		
+		garage = new ArrayList<Vehicle>();
 	}
 	
 	public void runGarage() {
@@ -37,17 +36,17 @@ public class Garage {
 
 	//For Cars
 	private void addVehicle(String owner, String fuelType, int wheels, String reg, int doors, Boolean isManual) {
-		falconGarage.add(new Car(falconGarage.size(), owner, fuelType, wheels, reg, doors, isManual ));
+		garage.add(new Car(garage.size(), owner, fuelType, wheels, reg, doors, isManual ));
 	}
 	
 	//For Motorcycles
 	private void addVehicle(String owner, String fuelType, int wheels, String reg, float tyreSize) {
-		falconGarage.add(new Motorcycle(falconGarage.size(), owner, fuelType, wheels, reg, tyreSize));
+		garage.add(new Motorcycle(garage.size(), owner, fuelType, wheels, reg, tyreSize));
 	}
 
 	//For Boats
 	private void addVehicle(String owner, String fuelType, float len, float wid, Boolean glitter) {
-		falconGarage.add(new Boat(falconGarage.size(), owner, fuelType, 0, len, wid, glitter));
+		garage.add(new Boat(garage.size(), owner, fuelType, 0, len, wid, glitter));
 	}
 	
 	//The use of this for loop and reducing the iterator seems a bit clunky, to be honest,
@@ -55,11 +54,11 @@ public class Garage {
 	private void removeVehicle(String vehicleType) {
 		System.out.println("Removing all " + vehicleType + "s from the garage, please inform the following owners");
 		
-		for(int i = 0; i < falconGarage.size(); i++)
+		for(int i = 0; i < garage.size(); i++)
 		{
-			if(falconGarage.get(i).getClass().getSimpleName().equalsIgnoreCase(vehicleType)) {
-				System.out.println("> " + falconGarage.get(i).getOwner());
-				falconGarage.remove(i);
+			if(garage.get(i).getClass().getSimpleName().equalsIgnoreCase(vehicleType)) {
+				System.out.println("> " + garage.get(i).getOwner());
+				garage.remove(i);
 				i--;
 			}
 		}
@@ -67,10 +66,10 @@ public class Garage {
 
 	
 	private void removeVehicle(int ID) {
-		for(int i = 0; i < falconGarage.size(); i++) {
-			if(falconGarage.get(i).getVehicleID() == ID) {
-				System.out.println("Removing vehicle " + falconGarage.get(i).getVehicleID() + " from the garage, please inform " + falconGarage.get(i).getOwner() +".");
-				falconGarage.remove(i);
+		for(int i = 0; i < garage.size(); i++) {
+			if(garage.get(i).getVehicleID() == ID) {
+				System.out.println("Removing vehicle " + garage.get(i).getVehicleID() + " from the garage, please inform " + garage.get(i).getOwner() +".");
+				garage.remove(i);
 				break;
 			}
 		}
@@ -78,16 +77,16 @@ public class Garage {
 	
 	//Could be improved to only fix certain vehicles.
 	private void fixVehicles(){
-		for(Vehicle index : falconGarage){
+		for(Vehicle index : garage){
 			index.fixVehicle();
 		}
 	}
 	
 	private void emptyGarage() {
 		System.out.println("The garage has gone into administration, removing all vehicles. Please inform all owners on record:");
-		for(int i = 0; i < falconGarage.size(); i++){
-			System.out.println(falconGarage.get(i).getOwner());
+		for(int i = 0; i < garage.size(); i++){
+			System.out.println(garage.get(i).getOwner());
 		}
-		falconGarage.clear();
+		garage.clear();
 	}
 }

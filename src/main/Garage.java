@@ -51,7 +51,7 @@ public class Garage {
 	}
 	
 	//The use of this for loop and reducing the iterator seems a bit clunky, to be honest,
-	//However it feels more reasource efficient than creating a second list of items to remove.
+	//However it feels more resource efficient than creating a second list of items to remove.
 	private void removeVehicle(String vehicleType) {
 		System.out.println("Removing all " + vehicleType + "s from the garage, please inform the following owners");
 		

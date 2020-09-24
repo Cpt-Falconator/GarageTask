@@ -31,6 +31,8 @@ public class Garage {
 				removeVehicle(3);
 				
 				fixVehicles();
+				
+				emptyGarage();
 	}
 
 	//For Cars
@@ -93,6 +95,10 @@ public class Garage {
 	}
 	
 	private void emptyGarage() {
+		System.out.println("The garage has gone into administration, removing all vehicles. Please inform all owners on record:");
+		for(int i = 0; i < falconGarage.size(); i++){
+			System.out.println(falconGarage.get(i).getOwner());
+		}
 		falconGarage.clear();
 	}
 }
